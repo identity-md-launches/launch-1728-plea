@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "PLEA",
+    "name": "PLEA",
+    "symbol": "PLEA",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8700,
+    "initialMarketCapWei": "1000000000000000000000",
+    "remainderTo": "0xee2aaa315cf7ed169f93148d30d24af9318dbb66"
+  },
+  "notes": "PLEA (src/PLEA.sol:PLEA) is a fixed-supply ERC-20 built on the unmodified OpenZeppelin v5.4.0 ERC20 for https://imdacc.fun/. Its constructor takes no arguments and mints exactly 1,000,000,000 PLEA (1000000000000000000000000000 base units, 18 decimals) once to msg.sender, which is the launch factory. There is no mint, burn, owner, pause, blacklist, tax, rebase, transfer limit, upgrade or permit function, so the supply is constant and every transfer delivers exactly the requested amount, including the factory's transfer to the launch's MerkleDistributor, the single-sided seed through the PoolManager, claims, and swaps either way. No application contracts are deployed: the 87% / 3% / 10% distribution in the brief is performed by the factory after construction, with economics.poolBps seeding the pool against IMD, the remainder forwarded to economics.remainderTo, and the swarm's 10% taken by the factory. pool.initialPrice is provenance only; the deployer derives the opening price from economics.initialMarketCapWei and totalSupply."
+}
